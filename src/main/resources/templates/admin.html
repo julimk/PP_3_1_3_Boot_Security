@@ -104,9 +104,9 @@
             <td th:text="${user.password}"></td>
             <td th:text="${user.getRolesString()}"></td>
             <td>
-                <input type="button" value="Edit" th:data-url="@{/editUser/{id}(id=${user.id})}"
+                <input type="button" value="Edit" th:data-url="@{admin/editUser/{id}(id=${user.id})}"
                        onclick="window.location.href=this.getAttribute('data-url');"/>
-                <form th:action="@{/deleteUser/{id}(id=${user.id})}" method="post">
+                <form th:action="@{admin/deleteUser/{id}(id=${user.id})}" method="post">
                     <input type="hidden" name="_method" value="delete"/>
                     <button type="submit">Delete</button>
                 </form>
@@ -114,7 +114,7 @@
         </tr>
     </table>
 </div>
-<input type="button" value="Add" onclick="window.location.href='createNewUser'"/>
+<input type="button" value="Add" onclick="window.location.href='admin/createNewUser'"/>
 <form method="POST" th:action="@{/logout}">
     <input type="submit" value="Logout"/>
 </form>
