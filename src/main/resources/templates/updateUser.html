@@ -97,7 +97,7 @@
 
 <br>
 
-<form th:action="@{/admin/updateUser}" th:object="${user}" th:method="POST">
+<form th:action="@{/admin/updateUser}" th:object="${user}" th:method="PUT">
   <input type="hidden" th:field="*{id}"/>
   <label for="username">Username</label>
   <br/>
