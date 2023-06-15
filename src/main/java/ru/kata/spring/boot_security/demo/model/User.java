@@ -53,11 +53,6 @@ public class User implements UserDetails {
         this.roles = roles;
     }
 
-    public void addRole(Role role) {
-        roles.add(role);
-        role.addUsers(this);
-    }
-
     @Override
     public boolean isAccountNonExpired() {
         return true;
@@ -88,7 +83,6 @@ public class User implements UserDetails {
                 .stream()
                 .map(r -> new SimpleGrantedAuthority(r.getName())).collect(Collectors.toList());
     }
-
 
     public Long getId() {
         return id;
